@@ -13,7 +13,7 @@ class CircleButton extends React.Component {
   }
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   circleButton: {
     position: 'absolute',
     bottom: 32,
