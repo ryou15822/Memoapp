@@ -1,29 +1,30 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import * as Font from 'expo-font';
+
 import { createIconSet } from '@expo/vector-icons';
+import { StyleSheet, View, TouchableHighLight } from 'react-native';
 import fontAwesome from '../../assets/fonts/fa-solid-900.ttf';
 
 const CustomIcon = createIconSet({
+  check: '\uf00c',
   pencil: '\uf303',
   plus: '\uf067',
 }, 'FontAwesome');
 
 class CircleButton extends React.Component {
-  state = {
+  State = {
     fontLoaded: false,
   }
 
   async componentWillMount() {
-    await Font.LoadAsync({
+    await Font.loadAsync({
       FontAwesome: fontAwesome,
     });
-
     this.setState({ fontLoaded: true });
   }
 
   render() {
-    const { name, style, color } = this.props;
+    const { name, style, color, onPress } = this.props;
 
     let bgColor = '#E31676';
     let textColor = '#fff';
@@ -34,18 +35,27 @@ class CircleButton extends React.Component {
     }
 
     return (
-      <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
-         {
-           this.state.fontLoaded ? (
-             <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
-           ) : null
-         }
-      </View>
+      <TouchableHighLight style={[styles.container, style]} onPress={onPress} underlayColor="transparent">
+        <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
+          {
+             this.state.fontLoaded ? (
+               <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
+             ) : null
+           }
+        </View>
+      </TouchableHighLight>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: 48,
+    height: 48,
+    position: 'absolute',
+    bottom: 24,
+    right: 24,
+  },
   circleButton: {
     position: 'absolute',
     bottom: 32,
@@ -57,7 +67,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circleButtonTitle: {
-    fontFamily: 'FontAwesome',
     fontSize: 24,
     lineHeight: 32,
   },

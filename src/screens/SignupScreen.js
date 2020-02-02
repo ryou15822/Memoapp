@@ -5,9 +5,9 @@ class SignupScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.title}>
+        <Text style={styles.title}>
         メンバー登録
-      </Text>
+        </Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
         <TouchableHighlight style={styles.button} onPress={() => {}} underlayColor="#C70F66">
