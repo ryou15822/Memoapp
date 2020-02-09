@@ -4,8 +4,8 @@ import firebase from 'firebase';
 
 class LoginScreen extends React.Component {
   state = {
-    email: '',
-    password: '',
+    email: 'user1@example.com',
+    password: 'password',
   }
 
   // eslint-disable-next-line

@@ -5,9 +5,9 @@ class Appbar extends React.Component {
   render() {
     return (
       <View style={styles.appbar}>
-         <View>
-            <Text style={styles.appbarTitle}>MEMOT</Text>
-         </View>
+        <View>
+          <Text style={styles.appbarTitle}>MEMOT</Text>
+        </View>
       </View>
     );
   }

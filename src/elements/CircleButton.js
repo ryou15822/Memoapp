@@ -2,7 +2,7 @@ import React from 'react';
 import * as Font from 'expo-font';
 
 import { createIconSet } from '@expo/vector-icons';
-import { StyleSheet, View, TouchableHighLight } from 'react-native';
+import { StyleSheet, View, TouchableHighlight } from 'react-native';
 import fontAwesome from '../../assets/fonts/fa-solid-900.ttf';
 
 const CustomIcon = createIconSet({
@@ -35,15 +35,15 @@ class CircleButton extends React.Component {
     }
 
     return (
-      <TouchableHighLight style={[styles.container, style]} onPress={onPress} underlayColor="transparent">
-        <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
+      <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor="transparent">
+        <View style={[styles.circleButton, { backgroundColor: bgColor }]}>
           {
-             this.state.fontLoaded ? (
+             this.State.fontLoaded ? (
                <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
              ) : null
            }
         </View>
-      </TouchableHighLight>
+      </TouchableHighlight>
     );
   }
 }
