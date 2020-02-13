@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   circleButtonTitle: {
     fontSize: 24,
     lineHeight: 32,
+    fontFamily: 'fontAwesome',
   },
 });
 
